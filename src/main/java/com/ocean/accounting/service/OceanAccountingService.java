@@ -3,6 +3,6 @@ package com.ocean.accounting.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AccountingService {
+public class OceanAccountingService {
 
 }
