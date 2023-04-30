@@ -1,1 +1,10 @@
+# Tomcat Server
 
+server:
+  port: 8084
+  
+  
+# Logger
+logging.level:
+  web: DEBUG
+  '[com.ocean.accounting]': DEBUG
