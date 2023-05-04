@@ -22,5 +22,28 @@ public class OceanAccountingService {
 		return users;
 		
 	}
+	
+	public void createUser(UserBean user) {
+		
+		this.validateUser(user);
+		
+		this.oceanAccountingDao.createUser(user);
+		
+	}
+	
+	public UserBean findUser(int idUser) {
+		
+		return this.oceanAccountingDao.fineUser(idUser);
+		
+	}
+	private void validateUser(UserBean user) {
+		
+		if (user.getFirstName().isEmpty() ||
+			user.getLastName().isEmpty()||
+			user.getUsername().isEmpty()) {
+			throw new RuntimeException("Invalid User Data:" + user);
+		}
+		
+	}
 
 }

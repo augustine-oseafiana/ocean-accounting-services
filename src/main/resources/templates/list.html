@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">      
     <title>Ocean Accounting Services</title>
 </head>
-<body>
-    <div class="container mt-5 w-75">  
+<body style="background: url(img/Ocean2.png) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+    <div class="container mt-3 w-85">  
     <div th:replace="~{fragments/oceanheader :: oceanheader(list)}"></div>
     <div class="table-responsive mt-3">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-light table-hover">
       <thead>
         <tr>
          <th scope="col">Id</th>
          <th scope="col">Name</th>
          <th scope="col">Username</th>
+         <th scope="col">MaritalStatus</th>
          <th scope="col">Birth</th>
          <th scope="col">Gender</th>
          <th scope="col">HomeAddress</th>
@@ -33,18 +34,19 @@
         <tr th:each="user : ${users}">
          <th scope="row" th:text="${user.idUser}"></th>
          <td th:text="${user.firstName} + ' ' + ${user.lastName}"></td>
-         <td >Augustine</td>
-         <td>@twitter</td>
-         <td>male</td>
-         <td>255 Stillwater Drive</td>
-         <td>male</td>
-         <td>male</td>
-         <td>male</td>
-         <td>male</td>
-         <td>male</td>
-         <td>male</td>
-         <td>Update</td>
-         <td>Delete</td>
+         <td th:text="${#strings.toUpperCase(user.username)}"></td>
+         <td th:text="${user.MaritalStatus}"></td>
+         <td th:text="${#dates.format(user.birth, 'dd/MM/yyyy')}"></td>
+         <td th:text="${user.Gender}"></td>
+         <td th:text="${user.HomeAddress}"></td>
+         <td th:text="${user.City}"></td>
+         <td th:text="${user.Province}"></td>
+         <td th:text="${user.PostCode}"></td>
+         <td th:text="${user.Country}"></td>
+         <td th:text="${user.Phone}"></td>
+         <td th:text="${user.Email}"></td>
+         <td><a href="#">Update</a></td>
+         <td><a href="#">Delete</a></td>
        </tr>
       </tbody>
     </table>

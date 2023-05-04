@@ -97,8 +97,8 @@ public class UserBean {
 		this.birth = birth;
 	}
 	
-	public Date getHomeAddress() {
-		return birth;
+	public String getHomeAddress() {
+		return homeaddress;
 	}
 
 	public void setHomeAddress(String homeaddress) {

@@ -7,27 +7,32 @@
 <body>
     <div th:fragment="oceanheader(option)">
    <img src="/img/Ocean.png">
-   <nav class="navbar navbar-expand-lg navbar-light mt-3" style="background-color:#e9ecef">
-     <a class="navbar-brand" href="#">Ocean Accounting Service</a>
+    <h1 class="display-5 text-center container mt-3 w-85">Ocean Accounting Services</h1>
+   <nav class="navbar navbar-expand-lg navbar-light mt-3" style="background-color:#6495ED">
+     <a class="navbar-brand" href="#"><strong>OAS</strong></a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" th:classappend="${option == 'home' ? 'active': ''}">
-        <a class="nav-link" href="/">Home</a>
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item" th:classappend="${option == 'home' ? 'active': ''}">
+        <a class="nav-link" href="/"><strong>Home</strong></a>
        </li>
        <li class="nav-item" th:classappend="${option == 'About' ? 'active': ''}" >
-         <a class="nav-link" href="/about">About</a>
+         <a class="nav-link" href="/about"><strong>About</strong></a>
        </li>
-       <li class="nav-item" th:classappend="${option == 'Services Offered' ? 'active': ''}">
-         <a class="nav-link" href="#">Register</a>
+       </li>
+       <li class="nav-item" th:classappend="${option == 'Contact' ? 'active': ''}" >
+         <a class="nav-link" href="/contact us"><strong>Contact Us</strong></a>
+       </li>
+       <li class="nav-item" th:classappend="${option == 'Register' ? 'active': ''}">
+         <a class="nav-link" href="/create"><strong>Register</strong></a>
        </li>
        <li class="nav-item" th:classappend="${option == 'Users' ? 'active': ''}">
-         <a class="nav-link" href="/list">ListUsers</a>
+         <a class="nav-link" href="/list"><strong>ListUsers</strong></a>
        </li>
-      </ul>
+     </ul>
      </div>
     </nav>
    </div>
