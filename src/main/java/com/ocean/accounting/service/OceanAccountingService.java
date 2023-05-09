@@ -36,6 +36,19 @@ public class OceanAccountingService {
 		return this.oceanAccountingDao.fineUser(idUser);
 		
 	}
+	
+	public void updateUser(UserBean user) {
+		
+		this.validateUser(user);
+		
+		this.oceanAccountingDao.updateUser(user);
+		
+	}
+	
+	public void deleteUser(int idUser) {
+		 this.oceanAccountingDao.deleteUser(idUser);
+		
+	}
 	private void validateUser(UserBean user) {
 		
 		if (user.getFirstName().isEmpty() ||

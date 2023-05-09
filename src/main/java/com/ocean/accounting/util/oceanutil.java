@@ -6,6 +6,9 @@ import java.util.Date;
 
 public class oceanutil {
 		 
+	public static int parseId(String id) {
+		 return (id==null)? 0:Integer.parseInt(id);
+	}
 		public static Date parseDate(String str) {
 		    Date date = null;
 		    

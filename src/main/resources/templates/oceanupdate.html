@@ -8,65 +8,65 @@
 </head>
 <body>
    <div class="container mt-5 w-75">  
-     <div th:replace="~{fragments/oceanheader :: oceanheader(register)}"></div>
+     <div th:replace="~{fragments/oceanheader :: oceanheader(list)}"></div>
      <div class="jumbotron bg-light border border-success mt-3 py-4" style="min-height: 450px">
         <h1 class="display-5">Update Register</h1>  
-        <form action="/create" method="post">
+        <form action="/update" method="post">
+          <div class="form-group">
+            <label for="id">Id:</label>
+            <input type="text" class="form-control" id="id" name="id" th:value="${user?.idUser}" readonly>
+          </div>
           <div class="form-group">
             <label for="first">First Name:</label>
-            <input type="text" class="form-control" id="first" name="first" placeholder="Type in First Name" required>
+            <input type="text" class="form-control" id="first" name="first" placeholder="Type in First Name" th:value="${user?.firstName}" required>
           </div>
           <div class="form-group">
             <label for="last">Last Name:</label>
-            <input type="text" class="form-control" id="last" name="last" placeholder="Type in Last Name" required>
+            <input type="text" class="form-control" id="last" name="last" placeholder="Type in Last Name" th:value="${user?.lastName}" required>
          </div>
          <div class="form-group">
           <label for="username">Username:</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Type in Username" required>
-         </div>
-         <div class="form-group">
-          <label for="password">Passworde:</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Type in password" required>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Type in Username" th:value="${user?.username}" required>
          </div>
          <div class="form-group">
           <label for="maritalstatus">MaritalStatus:</label>
-          <input type="maritalstatus" class="form-control" id="maritalstatus" name="maritalstatus" placeholder="Type in maritalstatus" required>
+          <input type="maritalstatus" class="form-control" id="maritalstatus" name="maritalstatus" placeholder="Type in maritalstatus" th:value="${user?.maritalStatus}" required>
          </div>
          <div class="form-group">
           <label for="birth">Birth:</label>
-          <input type="date" class="form-control" id="birth" name="birth"  required>
+          <input type="date" class="form-control" id="birth" name="birth" th:value="${#dates.format(user?.birth, 'yyyy-MM-dd')}" required>
          </div>
          <div class="form-group">
           <label for="gender">Gender:</label>
-          <input type="gender" class="form-control" id="gender" name="gender" placeholder="Type in gender" required>
+          <input type="gender" class="form-control" id="gender" name="gender" placeholder="Type in gender" th:value="${user?.gender}" required>
          </div>
          <div class="form-group">
           <label for="homeaddress">HomeAddress:</label>
-          <input type="homeaddress" class="form-control" id="homeaddress" name="homeaddress" placeholder="Type in homeaddress" required>
+          <input type="homeaddress" class="form-control" id="homeaddress" name="homeaddress" placeholder="Type in homeaddress" th:value="${user?.homeAddress}" required>
          </div>
          <div class="form-group">
           <label for="city">City:</label>
-          <input type="city" class="form-control" id="city" name="city" placeholder="Type in city" required>
+          <input type="city" class="form-control" id="city" name="city" placeholder="Type in city" th:value="${user?.city}" required>
          </div>
          <div class="form-group">
           <label for="province">Province:</label>
-          <input type="province" class="form-control" id="province" name="province" placeholder="Type in province" required>
+          <input type="province" class="form-control" id="province" name="province" placeholder="Type in province" th:value="${user?.province}" required>
          </div>
          <div class="form-group">
           <label for="postcode">PostCode:</label>
-          <input type="postcode" class="form-control" id="postcode" name="postcode" placeholder="Type in postcode" required>
+          <input type="postcode" class="form-control" id="postcode" name="postcode" placeholder="Type in postcode" th:value="${user?.postCode}"  required>
          </div>
          <div class="form-group">
           <label for="country">Country:</label>
-          <input type="country" class="form-control" id="country" name="country" placeholder="Type in country" required>
+          <input type="country" class="form-control" id="country" name="country" placeholder="Type in country" th:value="${user?.country}" required>
          </div>
          <div class="form-group">
           <label for="phone">Phone:</label>
-          <input type="phone" class="form-control" id="phone" name="phone" placeholder="Type in phone" required>
+          <input type="phone" class="form-control" id="phone" name="phone" placeholder="Type in phone" th:value="${user?.phone}" required>
          </div>
          <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Type in email" required>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Type in email" th:value="${user?.email}" required>
          </div>
          
          <button type="submit" class="btn btn-primary mt-2" style="min-width: 100px">Save</button>

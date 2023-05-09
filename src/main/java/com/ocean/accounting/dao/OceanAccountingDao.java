@@ -18,6 +18,7 @@ public class OceanAccountingDao {
 		
 		users.add(new UserBean(1,"John","Doe","jdoe","123","Married",oceanutil.parseDate("1984-03-03"),"Male","255 stillwater drive","Saskatoon","Saskachewan","S7j4m7","Canada","3068800884","augustine.oseafiana@gmail.com"));
 		users.add(new UserBean(2,"John","Doe","jdoe","123","Married",oceanutil.parseDate("1984-03-03"),"Male","255 stillwater drive","Saskatoon","Saskachewan","S7j4m7","Canada","3068800884","augustine.oseafiana@gmail.com"));
+		users.add(new UserBean(3,"John","Doe","jdoe","123","Married",oceanutil.parseDate("1984-03-03"),"Male","255 stillwater drive","Saskatoon","Saskachewan","S7j4m7","Canada","3068800884","augustine.oseafiana@gmail.com"));
 	}
     
 	public List<UserBean> listusers() {
@@ -45,6 +46,33 @@ public class OceanAccountingDao {
 		return this.users.stream()
 				       .filter(u->u.getIdUser()==idUser)
 				       .findAny().orElse(null);
+		
+	}
+	
+	public void updateUser(UserBean user) {
+		
+		UserBean currentUser = this.fineUser(user.getIdUser());
+		
+		if (currentUser!= null) {
+			currentUser.setFirstName(user.getFirstName());
+			currentUser.setLastName(user.getLastName());
+			currentUser.setUsername(user.getUsername());
+			currentUser.setMaritalStatus(user.getMaritalStatus());
+			currentUser.setBirth(user.getBirth());
+			currentUser.setGender(user.getGender());
+			currentUser.setCity(user.getCity());
+			currentUser.setProvince(user.getProvince());
+			currentUser.setPostCode(user.getPostCode());
+			currentUser.setCountry(user.getCountry());
+			currentUser.setPhone(user.getPhone());
+			currentUser.setEmail(user.getEmail());
+		}
+		
+	}
+	
+	public void deleteUser(int idUser) {
+		
+		this.users.removeIf(u->u.getIdUser()==idUser);
 		
 	}
 }

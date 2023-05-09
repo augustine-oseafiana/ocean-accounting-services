@@ -36,7 +36,7 @@
          <td th:text="${user.firstName} + ' ' + ${user.lastName}"></td>
          <td th:text="${#strings.toUpperCase(user.username)}"></td>
          <td th:text="${user.MaritalStatus}"></td>
-         <td th:text="${#dates.format(user.birth, 'dd/MM/yyyy')}"></td>
+         <td th:text="${#dates.format(user.birth, 'yyyy/MM/dd')}"></td>
          <td th:text="${user.Gender}"></td>
          <td th:text="${user.HomeAddress}"></td>
          <td th:text="${user.City}"></td>
@@ -45,8 +45,8 @@
          <td th:text="${user.Country}"></td>
          <td th:text="${user.Phone}"></td>
          <td th:text="${user.Email}"></td>
-         <td><a href="#">Update</a></td>
-         <td><a href="#">Delete</a></td>
+         <td><a th:href="@{/update/} + ${user.idUser}">Update</a></td>
+         <td><a th:href="@{/delete/} + ${user.idUser}">Delete</a></td>
        </tr>
       </tbody>
     </table>
